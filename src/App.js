@@ -1,49 +1,58 @@
-import React, { Component } from 'react'
-import Menu from './menu/Menu'
-import Home from './home/Home'
-import Rodape from './rodape/Rodape'
-import { Route, Switch } from 'react-router'
-import { BrowserRouter } from 'react-router-dom'
-import Categoria from './categoria/Categoria'
-import Secretaria from './secretaria/Secretaria'
-import Form from './form/Form'
-import Form2 from './form2/Form2'
-import Form3 from './form3/Form3'
-import Form4 from './form4/Form4'
+import React, { Component } from "react";
+import { Route, Switch } from "react-router";
+import { BrowserRouter } from "react-router-dom";
+
+import Home from "./pages/home";
+import ListStudent from "./pages/Students/listStudents";
+import ListProfessor from "./pages/Professors/listProfessors";
+import ListCourses from "./pages/Courses/listCourses";
+import ListClasses from "./pages/Classes/listClasses";
+import CreateStudent from "./pages/Students/createStudent";
+import CreateProfessor from "./pages/Professors/createProfessor";
+import CreateCourse from "./pages/Courses/createCourse";
+import CreateClass from "./pages/Classes/createClass";
+
+import Navbar from "./components/navbar";
+import Footer from "./components/footer"
 
 export default class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div className="container-fluid">
-           <Menu />
-           <Switch>
-              <Route exact path="/">
-                <Home />
-              </Route>
-              <Route path="/categoria">
-                <Categoria />
-              </Route>
-              <Route path="/secretaria">
-                <Secretaria />              
-              </Route>
-              <Route path="/form">
-                <Form/>
-              </Route>
-              <Route path="/form2">
-                <Form2/>
-              </Route>
-              <Route path="/form3">
-                <Form3/>
-              </Route>
-              <Route path="/form4">
-                <Form4/>
-              </Route>
-           </Switch>
-           <Rodape />
+        <div className="">
+          <Navbar />
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/professores">
+              <ListProfessor />
+            </Route>
+            <Route path="/classes">
+              <ListClasses />
+            </Route>
+            <Route path="/cursos">
+              <ListCourses />
+            </Route>
+            <Route path="/alunos">
+              <ListStudent />
+            </Route>
+            <Route path="/novo-professor">
+              <CreateProfessor />
+            </Route>
+            <Route path="/novo-classe">
+              <CreateClass />
+            </Route>
+            <Route path="/novo-curso">
+              <CreateCourse />
+            </Route>
+            <Route path="/novo-aluno">
+              <CreateStudent />
+            </Route>
+          </Switch>
+          <Footer />
         </div>
-        </BrowserRouter>
-        
-    )
+      </BrowserRouter>
+    );
   }
 }

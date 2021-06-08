@@ -3,14 +3,14 @@ import { Route, Switch } from "react-router";
 import { BrowserRouter } from "react-router-dom";
 
 import Home from "./pages/home";
-import ListStudent from "./pages/Students/listStudents";
-import ListProfessor from "./pages/Professors/listProfessors";
-import ListCourses from "./pages/Courses/listCourses";
-import ListClasses from "./pages/Classes/listClasses";
-import CreateStudent from "./pages/Students/createStudent";
-import CreateProfessor from "./pages/Professors/createProfessor";
-import CreateCourse from "./pages/Courses/createCourse";
-import CreateClass from "./pages/Classes/createClass";
+import ListStudent from "./pages/students/listStudents";
+import ListProfessor from "./pages/professors/listProfessors";
+import ListCourses from "./pages/courses/listCourses";
+import ListClasses from "./pages/classes/listClasses";
+import CreateStudent from "./pages/students/createStudent";
+import CreateProfessor from "./pages/professors/createProfessor";
+import CreateCourse from "./pages/courses/createCourse";
+import CreateClass from "./pages/classes/createClass";
 
 import Navbar from "./components/navbar";
 import Footer from "./components/footer"

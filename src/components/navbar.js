@@ -5,7 +5,7 @@ export default function Navbar() {
     <>
       <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
-          <Link className="navbar-brand" to="/">
+          <Link className="navbar-brand" to="/inicio">
             <i class="bi bi-journal-text"></i>
           </Link>
           <button

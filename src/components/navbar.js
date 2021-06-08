@@ -4,7 +4,7 @@ export default function Navbar() {
   return (
     <>
       <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container-fluid">
+        <div class="container">
           <Link className="navbar-brand" to="/">
             <i class="bi bi-journal-text"></i>
           </Link>

@@ -1,7 +1,9 @@
+import Layout from "../layout"
+
 export default function createProfessor() {
   return (
     <>
-      <div className="container">
+      <Layout>
         <h1>Novo Professor</h1>
         <form>
           <div class="mt-5 pt-3 form-row">
@@ -65,7 +67,7 @@ export default function createProfessor() {
             Editar
           </button>
         </form>
-      </div>
+      </Layout>
     </>
   );
 }

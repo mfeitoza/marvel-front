@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 
+import Layout from "../layout"
+
 export default function listClasses() {
   return (
     <>
-      <div className="container">
+      <Layout>
         <h1>Classes</h1>
 
         <table class="table">
@@ -37,7 +39,7 @@ export default function listClasses() {
         </table>
 
         <Link to="/novo-classe"><a class="btn btn-primary" role="button">Cadastrar</a></Link>
-      </div>
+      </Layout>
     </>
   );
 }

@@ -1,7 +1,9 @@
+import Layout from "../layout"
+
 export default function createStudent() {
   return (
     <>
-      <div className="container">
+      <Layout>
         <h1>Novo Aluno</h1>
 
         <form>
@@ -66,7 +68,7 @@ export default function createStudent() {
             Editar
           </button>
         </form>
-      </div>
+      </Layout>
     </>
   );
 }

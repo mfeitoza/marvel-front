@@ -1,9 +1,11 @@
+import Layout from "./layout"
+
 export default function home() {
   return (
     <>
-      <div className="container">
+      <Layout>
         <h1>Home</h1>
-      </div>
+      </Layout>
     </>
   );
 }

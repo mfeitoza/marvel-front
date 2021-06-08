@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 
+import Layout from "../layout"
+
 export default function listCourses() {
   return (
     <>
-      <div className="container">
+      <Layout>
         <h1>Cursos</h1>
 
         <table class="table">
@@ -37,7 +39,7 @@ export default function listCourses() {
         </table>
 
         <Link to="/novo-curso"><a class="btn btn-primary" role="button">Cadastrar</a></Link>
-      </div>
+      </Layout>
     </>
   );
 }

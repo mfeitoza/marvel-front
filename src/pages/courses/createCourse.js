@@ -1,7 +1,9 @@
+import Layout from "../layout"
+
 export default function createCourse() {
   return (
     <>
-      <div className="container">
+      <Layout>
         <h1>Novo Curso</h1>
         <form>
           <div class="mt-5 pt-3 form-row">
@@ -60,7 +62,7 @@ export default function createCourse() {
             Editar
           </button>
         </form>
-      </div>
+      </Layout>
     </>
   );
 }

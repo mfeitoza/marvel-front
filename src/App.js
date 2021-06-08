@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router";
 import { BrowserRouter } from "react-router-dom";
 
 import Home from "./pages/home";
+import Login from "./pages/login";
 import ListStudent from "./pages/students/listStudents";
 import ListProfessor from "./pages/professors/listProfessors";
 import ListCourses from "./pages/courses/listCourses";
@@ -13,16 +14,18 @@ import CreateCourse from "./pages/courses/createCourse";
 import CreateClass from "./pages/classes/createClass";
 
 import Navbar from "./components/navbar";
-import Footer from "./components/footer"
+import Footer from "./components/footer";
 
 export default class App extends Component {
   render() {
     return (
       <BrowserRouter>
         <div className="">
-          <Navbar />
           <Switch>
             <Route exact path="/">
+              <Login />
+            </Route>
+            <Route path="/inicio">
               <Home />
             </Route>
             <Route path="/professores">
@@ -50,7 +53,6 @@ export default class App extends Component {
               <CreateStudent />
             </Route>
           </Switch>
-          <Footer />
         </div>
       </BrowserRouter>
     );

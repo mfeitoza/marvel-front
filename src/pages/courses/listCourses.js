@@ -1,8 +1,17 @@
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 import Layout from "../layout"
+import { getCourses } from "../../api";
 
 export default function ListCourses() {
+  const [courses, setCourses] = useState([]);
+
+  useEffect(() => {
+    getCourses().then((data) => {
+      setCourses(data)
+    })
+  }, [])
   return (
     <>
       <Layout>
@@ -12,29 +21,18 @@ export default function ListCourses() {
           <thead>
             <tr>
               <th scope="col">#</th>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
+              <th scope="col">Nome</th>
+              <th scope="col">Carga horária</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td colSpan="2">Larry the Bird</td>
-              <td>@twitter</td>
-            </tr>
+          {courses.map((course) => (
+              <tr>
+                <th scope="row">{ course.id }</th>
+                <td>{ course.name }</td>
+                <td>{ course.workload }</td>
+              </tr>
+            ))}
           </tbody>
         </table>
 

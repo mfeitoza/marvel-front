@@ -4,12 +4,19 @@ import { useState, useEffect } from 'react';
 import Layout from "../layout"
 
 export default function ListProfessors(props) {
+
+  const [professors, setProfessors] = useState([]);
+
+  useEffect(() => {
+    console.log('effect')
+  })
+
   return (
     <>
       <Layout>
         <h1>Professores</h1>
 
-        <table class="table">
+        <table className="table">
           <thead>
             <tr>
               <th scope="col">#</th>
@@ -33,13 +40,13 @@ export default function ListProfessors(props) {
             </tr>
             <tr>
               <th scope="row">3</th>
-              <td colspan="2">Larry the Bird</td>
+              <td colSpan="2">Larry the Bird</td>
               <td>@twitter</td>
             </tr>
           </tbody>
         </table>
         
-        <Link to="/novo-professor"><a class="btn btn-primary" role="button">Cadastrar</a></Link>
+        <Link to="/novo-professor"><a className="btn btn-primary" role="button">Cadastrar</a></Link>
       </Layout>
     </>
   );

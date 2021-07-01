@@ -8,7 +8,7 @@ export default function CistStudents() {
       <Layout>
         <h1>Estudantes</h1>
 
-        <table class="table">
+        <table className="table">
           <thead>
             <tr>
               <th scope="col">#</th>
@@ -32,13 +32,13 @@ export default function CistStudents() {
             </tr>
             <tr>
               <th scope="row">3</th>
-              <td colspan="2">Larry the Bird</td>
+              <td colSpan="2">Larry the Bird</td>
               <td>@twitter</td>
             </tr>
           </tbody>
         </table>
 
-        <Link to="/novo-aluno"><a class="btn btn-primary" role="button">Cadastrar</a></Link>
+        <Link to="/novo-aluno"><a className="btn btn-primary" role="button">Cadastrar</a></Link>
       </Layout>
     </>
   );

@@ -6,50 +6,50 @@ export default function CreateClass() {
       <Layout>
         <h1>Nova Classe</h1>
         <form>
-          <div class="mt-5 pt-3 form-row">
-            <div class="form-group col-md-6">
+          <div className="mt-5 pt-3 form-row">
+            <div className="form-group col-md-6">
               <label for="inputEmail4">ID</label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="inputEmail4"
                 placeholder=""
               />
             </div>
-            <div class="form-group col-md-6">
+            <div className="form-group col-md-6">
               <label for="inputEmail4">Nome do Classe</label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="inputEmail4"
                 placeholder=""
               />
             </div>
-            <div class="form-group col-md-6">
+            <div className="form-group col-md-6">
               <label for="inputPassword4">Carga Horária</label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="inputPassword4"
                 placeholder=""
               />
             </div>
           </div>
-          <div class="form-group">
+          <div className="form-group">
             <label for="inputAddress">Descrição</label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               id="inputAddress"
               placeholder=""
             />
           </div>
-          <div class="form-row"></div>
+          <div className="form-row"></div>
           <br />
-          <button type="submit" class="btn btn-primary">
+          <button type="submit" className="btn btn-primary">
             Cadastrar
           </button>{" "}
-          <button type="submit" class="btn btn-primary">
+          <button type="submit" className="btn btn-primary">
             Editar
           </button>
         </form>

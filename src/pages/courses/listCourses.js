@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import Layout from "../layout"
 
-export default function listCourses() {
+export default function ListCourses() {
   return (
     <>
       <Layout>

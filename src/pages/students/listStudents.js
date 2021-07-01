@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import Layout from "../layout"
 
-export default function listStudents() {
+export default function CistStudents() {
   return (
     <>
       <Layout>

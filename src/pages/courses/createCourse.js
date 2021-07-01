@@ -1,6 +1,6 @@
 import Layout from "../layout"
 
-export default function createCourse() {
+export default function CreateCourse() {
   return (
     <>
       <Layout>

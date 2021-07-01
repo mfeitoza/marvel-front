@@ -1,6 +1,6 @@
 import Layout from "../layout"
 
-export default function createClass() {
+export default function CreateClass() {
   return (
     <>
       <Layout>

@@ -1,6 +1,6 @@
 import Layout from "../layout"
 
-export default function createProfessor() {
+export default function CreateProfessor() {
   return (
     <>
       <Layout>

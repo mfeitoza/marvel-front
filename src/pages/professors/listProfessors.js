@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+import { useState, useEffect } from 'react';
 
 import Layout from "../layout"
 
-export default function listProfessors() {
+export default function ListProfessors(props) {
   return (
     <>
       <Layout>

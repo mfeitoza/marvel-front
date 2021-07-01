@@ -1,10 +1,14 @@
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
 
-export default function login() {
+export default function Login() {
+  const { register, handleSubmit } = useForm();
+  const onSubmit = data => console.log(data)
+
   return (
     <>
       <main className="form-signin text-center">
-        <form>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <i className="bi bi-journal-text fs-1"></i>
           <h1 className="h3 mb-3 fw-normal">Sistema Acadêmico</h1>
 
@@ -12,26 +16,22 @@ export default function login() {
             <input
               type="email"
               className="form-control"
-              id="floatingInput"
-              placeholder="name@example.com"
+              {...register("email")}
             />
-            <label for="floatingInput">Email</label>
+            <label for="email">Email</label>
           </div>
           <div className="form-floating">
             <input
               type="password"
               className="form-control"
-              id="floatingPassword"
-              placeholder="Password"
+              {...register("password")}
             />
-            <label for="floatingPassword">Senha</label>
+            <label for="password">Senha</label>
           </div>
 
-          <Link to="/inicio">
           <button className="w-100 btn btn-lg btn-primary" type="submit">
             LogIn
           </button>
-          </Link>
           <p className="mt-5 mb-3 text-muted">2021</p>
         </form>
       </main>

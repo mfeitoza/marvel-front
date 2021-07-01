@@ -1,70 +1,58 @@
-import Layout from "../layout"
+import Layout from "../layout";
+import { useForm } from "react-hook-form";
 
 export default function CreateProfessor() {
+  const { register, handleSubmit } = useForm();
+  const onSubmit = (data) => console.log(data);
+
   return (
     <>
       <Layout>
         <h1>Novo Professor</h1>
-        <form>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mt-5 pt-3 form-row">
             <div className="form-group col-md-6">
-              <label for="inputEmail4">ID</label>
+              <label for="name">Nome</label>
               <input
                 type="text"
                 className="form-control"
-                id="inputEmail4"
-                placeholder=""
+                {...register("name")}
               />
             </div>
             <div className="form-group col-md-6">
-              <label for="inputEmail4">Nome</label>
+              <label for="gender">Gênero</label>
               <input
                 type="text"
                 className="form-control"
-                id="inputEmail4"
-                placeholder=""
+                {...register("gender")}
               />
             </div>
             <div className="form-group col-md-6">
-              <label for="inputPassword4">Gênero</label>
-              <input
-                type="text"
-                className="form-control"
-                id="inputPassword4"
-                placeholder=""
-              />
-            </div>
-            <div className="form-group col-md-6">
-              <label for="inputEmail4">Email</label>
+              <label for="email">Email</label>
               <input
                 type="email"
                 className="form-control"
-                id="inputEmail4"
-                placeholder="Email"
+                {...register("email")}
               />
             </div>
           </div>
           <div className="form-group">
-            <label for="inputAddress">Data de Nascimento</label>
+            <label for="birthday">Data de Nascimento</label>
             <input
               type="date"
               className="form-control"
-              id="inputAddress"
-              placeholder="1234 Main St"
+              {...register("birthday")}
             />
           </div>
           <div className="form-row">
             <div className="form-group col-md-6">
-              <label for="inputCity">telefone</label>
-              <input type="text" className="form-control" id="inputCity" />
+              <label for="phone">telefone</label>
+              <input type="text" className="form-control" {...register("phone")} />
             </div>
           </div>
           <br />
           <button type="submit" className="btn btn-primary">
             Cadastrar
-          </button>{" "}
-          <button type="submit" className="btn btn-primary">
-            Editar
           </button>
         </form>
       </Layout>

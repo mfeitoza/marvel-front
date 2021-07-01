@@ -1,8 +1,18 @@
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 
-import Layout from "../layout"
+import Layout from "../layout";
+import { getClasses } from "../../api";
 
 export default function ListClasses() {
+  const [classes, setClasses] = useState([]);
+
+  useEffect(() => {
+    getClasses().then((data) => {
+      setClasses(data);
+    });
+  }, []);
+
   return (
     <>
       <Layout>
@@ -12,33 +22,26 @@ export default function ListClasses() {
           <thead>
             <tr>
               <th scope="col">#</th>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
+              <th scope="col">Localização</th>
+              <th scope="col">Lugares Disponíveis</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td colSpan="2">Larry the Bird</td>
-              <td>@twitter</td>
-            </tr>
+            {classes.map((cls) => (
+              <tr>
+                <th scope="row">{ cls.id }</th>
+                <td>{ cls.location }</td>
+                <td>{ cls.availablePlaces }</td>
+              </tr>
+            ))}
           </tbody>
         </table>
 
-        <Link to="/novo-classe"><a className="btn btn-primary" role="button">Cadastrar</a></Link>
+        <Link to="/novo-classe">
+          <a className="btn btn-primary" role="button">
+            Cadastrar
+          </a>
+        </Link>
       </Layout>
     </>
   );

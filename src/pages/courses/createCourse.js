@@ -1,56 +1,39 @@
 import Layout from "../layout"
+import { useForm } from "react-hook-form";
 
 export default function CreateCourse() {
+  const { register, handleSubmit } = useForm();
+  const onSubmit = (data) => console.log(data);
+
   return (
     <>
       <Layout>
-        <h1>Novo Curso</h1>
-        <form>
+        <h1>Nova Curso</h1>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mt-5 pt-3 form-row">
             <div className="form-group col-md-6">
-              <label for="inputEmail4">ID</label>
+              <label for="inputEmail4">Nome do Classe</label>
               <input
                 type="text"
                 className="form-control"
-                id="inputEmail4"
-                placeholder=""
+                {...register("name")}
               />
             </div>
             <div className="form-group col-md-6">
-              <label for="inputEmail4">Nome do Curso</label>
+              <label for="inputPassword4">Carga Horária</label>
               <input
                 type="text"
                 className="form-control"
-                id="inputEmail4"
-                placeholder=""
-              />
-            </div>
-            <div className="form-group col-md-6">
-              <label for="inputPassword4">Local</label>
-              <input
-                type="text"
-                className="form-control"
-                id="inputPassword4"
-                placeholder=""
+                {...register("workload")}
               />
             </div>
           </div>
           <div className="form-group">
-            <label for="inputAddress">Data de Início</label>
+            <label for="inputAddress">Descrição</label>
             <input
-              type="date"
+              type="text"
               className="form-control"
-              id="inputAddress"
-              placeholder="1234 Main St"
-            />
-          </div>
-          <div className="form-group">
-            <label for="inputAddress">Data de Fim</label>
-            <input
-              type="date"
-              className="form-control"
-              id="inputAddress"
-              placeholder="1234 Main St"
+              {...register("description")}
             />
           </div>
           <div className="form-row"></div>

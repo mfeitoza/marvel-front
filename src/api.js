@@ -8,19 +8,19 @@ const api = ky.create({
 
 // GET
 export function getClasses() {
-  return api.get('/classes')
+  return api.get('classes').json()
 }
 
 export function getCourses() {
-  return api.get('/courses')
+  return api.get('courses').json()
 }
 
 export function getProfessors() {
-  return api.get('/professors')
+  return api.get('professors').json()
 }
 
 export function getStudentes() {
-  return api.get('/students')
+  return api.get('students').json()
 }
 
 // POSTS

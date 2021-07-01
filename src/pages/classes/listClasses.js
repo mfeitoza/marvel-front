@@ -22,6 +22,7 @@ export default function ListClasses() {
           <thead>
             <tr>
               <th scope="col">#</th>
+              <th scope="col">Curso</th>
               <th scope="col">Localização</th>
               <th scope="col">Lugares Disponíveis</th>
             </tr>
@@ -30,6 +31,7 @@ export default function ListClasses() {
             {classes.map((cls) => (
               <tr>
                 <th scope="row">{ cls.id }</th>
+                <td>{ cls.course.name }</td>
                 <td>{ cls.location }</td>
                 <td>{ cls.availablePlaces }</td>
               </tr>

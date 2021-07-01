@@ -1,15 +1,17 @@
 import { Link } from "react-router-dom";
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
-import Layout from "../layout"
+import Layout from "../layout";
+import { getProfessors } from "../../api";
 
 export default function ListProfessors(props) {
-
   const [professors, setProfessors] = useState([]);
 
   useEffect(() => {
-    console.log('effect')
-  })
+    getProfessors().then((data) => {
+      setProfessors(data);
+    });
+  }, []);
 
   return (
     <>
@@ -20,33 +22,28 @@ export default function ListProfessors(props) {
           <thead>
             <tr>
               <th scope="col">#</th>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
+              <th scope="col">Nome</th>
+              <th scope="col">Email</th>
+              <th scope="col">Telefone</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td colSpan="2">Larry the Bird</td>
-              <td>@twitter</td>
-            </tr>
+            {professors.map((professor) => (
+              <tr>
+                <th scope="row">{ professor.id }</th>
+                <td>{ professor.name }</td>
+                <td>{ professor.email }</td>
+                <td>{ professor.phone }</td>
+              </tr>
+            ))}
           </tbody>
         </table>
-        
-        <Link to="/novo-professor"><a className="btn btn-primary" role="button">Cadastrar</a></Link>
+
+        <Link to="/novo-professor">
+          <a className="btn btn-primary" role="button">
+            Cadastrar
+          </a>
+        </Link>
       </Layout>
     </>
   );

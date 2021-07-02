@@ -1,9 +1,17 @@
-import Layout from "../layout"
-import { useForm } from "react-hook-form";
+import Layout from "../layout";
+import { useForm, } from "react-hook-form";
+import { useHistory } from "react-router-dom";
+
+import { saveCourses } from "../../api";
 
 export default function CreateCourse() {
+  let history = useHistory();
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    saveCourses(data).then(res => {
+      history.push("/cursos");
+    }).catch(() => alert("ERRO! Tente novamente."))
+  }
 
   return (
     <>

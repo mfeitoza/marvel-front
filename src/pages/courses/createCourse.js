@@ -20,7 +20,7 @@ export default function CreateCourse() {
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mt-5 pt-3 form-row">
             <div className="form-group col-md-6">
-              <label for="inputEmail4">Nome do Classe</label>
+              <label htmlFor="inputEmail4">Nome do Classe</label>
               <input
                 type="text"
                 className="form-control"
@@ -28,7 +28,7 @@ export default function CreateCourse() {
               />
             </div>
             <div className="form-group col-md-6">
-              <label for="inputPassword4">Carga Horária</label>
+              <label htmlFor="inputPassword4">Carga Horária</label>
               <input
                 type="text"
                 className="form-control"
@@ -37,7 +37,7 @@ export default function CreateCourse() {
             </div>
           </div>
           <div className="form-group">
-            <label for="inputAddress">Descrição</label>
+            <label htmlFor="inputAddress">Descrição</label>
             <input
               type="text"
               className="form-control"

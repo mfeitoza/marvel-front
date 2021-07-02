@@ -40,9 +40,9 @@ export default function ListClasses() {
         </table>
 
         <Link to="/novo-classe">
-          <button className="btn btn-primary" role="button">
+          <a className="btn btn-primary" role="button">
             Cadastrar
-          </button>
+          </a>
         </Link>
       </Layout>
     </>

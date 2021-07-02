@@ -20,7 +20,7 @@ export default function CreateStudent() {
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mt-5 pt-3 form-row">
             <div className="form-group col-md-6">
-              <label for="name">Nome</label>
+              <label htmlFor="name">Nome</label>
               <input
                 type="text"
                 className="form-control"
@@ -28,7 +28,7 @@ export default function CreateStudent() {
               />
             </div>
             <div className="form-group col-md-6">
-              <label for="gender">Genero</label>
+              <label htmlFor="gender">Genero</label>
               <select class="form-select" aria-label="Default select example" {...register("gender", { required: true })}>
                 <option selected></option>
                 <option value="male">Masculino</option>
@@ -36,7 +36,7 @@ export default function CreateStudent() {
               </select>
             </div>
             <div className="form-group col-md-6">
-              <label for="email">Email</label>
+              <label htmlFor="email">Email</label>
               <input
                 type="email"
                 className="form-control"
@@ -45,7 +45,7 @@ export default function CreateStudent() {
             </div>
           </div>
           <div className="form-group col-md-6">
-            <label for="birthday">Data de Nascimento</label>
+            <label htmlFor="birthday">Data de Nascimento</label>
             <input
               type="date"
               className="form-control"
@@ -54,13 +54,13 @@ export default function CreateStudent() {
           </div>
           <div className="form-row">
             <div className="form-group col-md-6">
-              <label for="phone">Telefone</label>
+              <label htmlFor="phone">Telefone</label>
               <input type="text" className="form-control" {...register("phone", { required: true })} />
             </div>
           </div>
           <div className="form-row">
             <div className="form-group col-md-6">
-              <label for="password">Senha</label>
+              <label htmlFor="password">Senha</label>
               <input type="password" className="form-control" {...register("password", { required: true })} />
             </div>
           </div>

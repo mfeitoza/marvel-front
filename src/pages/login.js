@@ -28,7 +28,7 @@ export default function Login() {
               defaultValue="fernando@gmail.com"
               {...register("email", { required: true })}
             />
-            <label for="email">Email</label>
+            <label htmlFor="email">Email</label>
           </div>
           <div className="form-floating">
             <input
@@ -37,7 +37,7 @@ export default function Login() {
               defaultValue="123456789"
               {...register("password", { required: true })}
             />
-            <label for="password">Senha</label>
+            <label htmlFor="password">Senha</label>
           </div>
 
           <button className="w-100 btn btn-lg btn-primary" type="submit">

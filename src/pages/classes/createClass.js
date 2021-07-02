@@ -34,7 +34,7 @@ export default function CreateClass() {
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mt-5 pt-3 form-row">
             <div className="form-group col-md-6">
-              <label for="course">Curso</label>
+              <label htmlFor="course">Curso</label>
               <select
                 class="form-select"
                 aria-label="Default select example"
@@ -49,7 +49,7 @@ export default function CreateClass() {
               </select>
             </div>
             <div className="form-group col-md-6">
-              <label for="name">Vagas</label>
+              <label htmlFor="name">Vagas</label>
               <input
                 type="number"
                 className="form-control"
@@ -57,7 +57,7 @@ export default function CreateClass() {
               />
             </div>
             <div className="form-group col-md-6">
-              <label for="location">Local</label>
+              <label htmlFor="location">Local</label>
               <input
                 type="text"
                 className="form-control"
@@ -66,7 +66,7 @@ export default function CreateClass() {
             </div>
           </div>
           <div className="form-group col-md-6">
-            <label for="startDate">Data de Início</label>
+            <label htmlFor="startDate">Data de Início</label>
             <input
               type="date"
               className="form-control"
@@ -74,7 +74,7 @@ export default function CreateClass() {
             />
           </div>
           <div className="form-group col-md-6">
-            <label for="endDate">Data de Fim</label>
+            <label htmlFor="endDate">Data de Fim</label>
             <input
               type="date"
               className="form-control"
@@ -82,7 +82,7 @@ export default function CreateClass() {
             />
           </div>
           <div className="form-group col-md-6">
-            <label for="course">Professor</label>
+            <label htmlFor="course">Professor</label>
             <select
               class="form-select"
               aria-label="Default select example"

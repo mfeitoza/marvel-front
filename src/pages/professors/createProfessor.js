@@ -1,9 +1,17 @@
 import Layout from "../layout";
-import { useForm } from "react-hook-form";
+import { useForm, } from "react-hook-form";
+import { useHistory } from "react-router-dom";
+
+import { saveProfessors } from "../../api";
 
 export default function CreateProfessor() {
+  let history = useHistory();
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    saveProfessors(data).then(res => {
+      history.push("/professores");
+    }).catch(() => alert("ERRO! Tente novamente."))
+  }
 
   return (
     <>
@@ -16,38 +24,44 @@ export default function CreateProfessor() {
               <input
                 type="text"
                 className="form-control"
-                {...register("name")}
+                {...register("name", { required: true })}
               />
             </div>
             <div className="form-group col-md-6">
-              <label for="gender">Gênero</label>
-              <input
-                type="text"
-                className="form-control"
-                {...register("gender")}
-              />
+              <label for="gender">Genero</label>
+              <select class="form-select" aria-label="Default select example" {...register("gender", { required: true })}>
+                <option selected></option>
+                <option value="male">Masculino</option>
+                <option value="female">Feminino</option>
+              </select>
             </div>
             <div className="form-group col-md-6">
               <label for="email">Email</label>
               <input
                 type="email"
                 className="form-control"
-                {...register("email")}
+                {...register("email", { required: true })}
               />
             </div>
           </div>
-          <div className="form-group">
+          <div className="form-group col-md-6">
             <label for="birthday">Data de Nascimento</label>
             <input
               type="date"
               className="form-control"
-              {...register("birthday")}
+              {...register("birthday", { required: true })}
             />
           </div>
           <div className="form-row">
             <div className="form-group col-md-6">
-              <label for="phone">telefone</label>
-              <input type="text" className="form-control" {...register("phone")} />
+              <label for="phone">Telefone</label>
+              <input type="text" className="form-control" {...register("phone", { required: true })} />
+            </div>
+          </div>
+          <div className="form-row">
+            <div className="form-group col-md-6">
+              <label for="password">Senha</label>
+              <input type="password" className="form-control" {...register("password", { required: true })} />
             </div>
           </div>
           <br />

@@ -29,7 +29,7 @@ export default function ListStudents(props) {
           </thead>
           <tbody>
             {students.map((student) => (
-              <tr>
+              <tr key={student.id}>
                 <th scope="row">{ student.id }</th>
                 <td>{ student.name }</td>
                 <td>{ student.email }</td>

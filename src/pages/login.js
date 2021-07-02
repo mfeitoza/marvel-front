@@ -26,7 +26,7 @@ export default function Login() {
               type="email"
               className="form-control"
               defaultValue="fernando@gmail.com"
-              {...register("email")}
+              {...register("email", { required: true })}
             />
             <label for="email">Email</label>
           </div>
@@ -35,7 +35,7 @@ export default function Login() {
               type="password"
               className="form-control"
               defaultValue="123456789"
-              {...register("password")}
+              {...register("password", { required: true })}
             />
             <label for="password">Senha</label>
           </div>

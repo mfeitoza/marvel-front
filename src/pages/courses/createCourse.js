@@ -24,7 +24,7 @@ export default function CreateCourse() {
               <input
                 type="text"
                 className="form-control"
-                {...register("name")}
+                {...register("name", { required: true })}
               />
             </div>
             <div className="form-group col-md-6">
@@ -32,7 +32,7 @@ export default function CreateCourse() {
               <input
                 type="text"
                 className="form-control"
-                {...register("workload")}
+                {...register("workload", { required: true })}
               />
             </div>
           </div>
@@ -41,7 +41,7 @@ export default function CreateCourse() {
             <input
               type="text"
               className="form-control"
-              {...register("description")}
+              {...register("description", { required: true })}
             />
           </div>
           <div className="form-row"></div>

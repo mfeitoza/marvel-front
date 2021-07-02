@@ -29,7 +29,7 @@ export default function ListClasses() {
           </thead>
           <tbody>
             {classes.map((cls) => (
-              <tr>
+              <tr key={cls.id}>
                 <th scope="row">{ cls.id }</th>
                 <td>{ cls.course.name }</td>
                 <td>{ cls.location }</td>
@@ -40,9 +40,9 @@ export default function ListClasses() {
         </table>
 
         <Link to="/novo-classe">
-          <a className="btn btn-primary" role="button">
+          <button className="btn btn-primary" role="button">
             Cadastrar
-          </a>
+          </button>
         </Link>
       </Layout>
     </>

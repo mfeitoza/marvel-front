@@ -27,7 +27,7 @@ export default function ListCourses() {
           </thead>
           <tbody>
           {courses.map((course) => (
-              <tr>
+              <tr key={course.id}>
                 <th scope="row">{ course.id }</th>
                 <td>{ course.name }</td>
                 <td>{ course.workload }</td>

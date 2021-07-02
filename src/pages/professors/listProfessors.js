@@ -29,7 +29,7 @@ export default function ListProfessors(props) {
           </thead>
           <tbody>
             {professors.map((professor) => (
-              <tr>
+              <tr key={professor.id}>
                 <th scope="row">{ professor.id }</th>
                 <td>{ professor.name }</td>
                 <td>{ professor.email }</td>

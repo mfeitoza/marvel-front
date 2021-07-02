@@ -13,9 +13,6 @@ import CreateProfessor from "./pages/professors/createProfessor";
 import CreateCourse from "./pages/courses/createCourse";
 import CreateClass from "./pages/classes/createClass";
 
-import Navbar from "./components/navbar";
-import Footer from "./components/footer";
-
 export default class App extends Component {
   render() {
     return (

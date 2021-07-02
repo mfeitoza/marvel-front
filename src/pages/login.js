@@ -1,10 +1,19 @@
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
-export default function Login() {
-  const { register, handleSubmit } = useForm();
-  const onSubmit = data => console.log(data)
+import { login } from "../api";
 
+export default function Login() {
+  let history = useHistory();
+  const { register, handleSubmit } = useForm();
+
+  const onSubmit = ({ email, password }) => {
+    login(email, password).then((data) => {
+      history.push("/inicio");
+    }).catch(data => {
+      alert("Login invalido!")
+    })
+  }
   return (
     <>
       <main className="form-signin text-center">
@@ -16,6 +25,7 @@ export default function Login() {
             <input
               type="email"
               className="form-control"
+              defaultValue="fernando@gmail.com"
               {...register("email")}
             />
             <label for="email">Email</label>
@@ -24,6 +34,7 @@ export default function Login() {
             <input
               type="password"
               className="form-control"
+              defaultValue="123456789"
               {...register("password")}
             />
             <label for="password">Senha</label>

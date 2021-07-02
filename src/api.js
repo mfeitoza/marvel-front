@@ -24,6 +24,10 @@ export function getStudentes() {
 }
 
 // POSTS
+export function login(email, password) {
+  return api.post('login', { json: { email, password } }).json()
+}
+
 export function saveClasses() {
 
 }
